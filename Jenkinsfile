@@ -31,9 +31,9 @@ pipeline {
                 script{
                         sh '''
                         cat /var/lib/jenkins/workspace/$JOB_NAME/dev/deployment.yaml
-                        sed -i '' "s/32/${BUILD_NUMBER}/g" /dev/deployment.yaml
-                        cat deploy.yaml
-                        git add deploy.yaml
+                        sed -i '' "s/32/${BUILD_NUMBER}/g" /var/lib/jenkins/workspace/$JOB_NAME/dev/deployment.yaml
+                        cat /var/lib/jenkins/workspace/$JOB_NAME/dev/deployment.yaml
+                        git add .
                         git commit -m 'Updated the deploy yaml | Jenkins Pipeline'
                         git remote -v
                         git push https://github.com/betawins/Hiring-app-argocd.git HEAD:main
