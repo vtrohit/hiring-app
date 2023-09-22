@@ -30,7 +30,7 @@ pipeline {
             steps {
                 script{
                         sh '''
-                        cat deploy.yaml
+                        cat /dev/deployment.yaml
                         sed -i '' "s/32/${BUILD_NUMBER}/g" /dev/deployment.yaml
                         cat deploy.yaml
                         git add deploy.yaml
