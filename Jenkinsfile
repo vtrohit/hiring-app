@@ -30,7 +30,7 @@ pipeline {
             steps {
                 script{
                         sh '''
-                        cat /dev/deployment.yaml
+                        cat /var/lib/jenkins/workspace/$JOB_NAME/dev/deployment.yaml
                         sed -i '' "s/32/${BUILD_NUMBER}/g" /dev/deployment.yaml
                         cat deploy.yaml
                         git add deploy.yaml
