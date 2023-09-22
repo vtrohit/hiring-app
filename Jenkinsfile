@@ -20,6 +20,7 @@ pipeline {
                     sh "docker push sabair0509/hiring-app:$BUILD_NUMBER"
                 }
             }
+        }
         stage('Checkout K8S manifest SCM'){
             steps {
               git branch: 'main', url: 'https://github.com/betawins/hiring-app.git'
