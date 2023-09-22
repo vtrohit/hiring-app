@@ -36,7 +36,7 @@ pipeline {
                         git add .
                         git commit -m 'Updated the deploy yaml | Jenkins Pipeline'
                         git remote -v
-                        git push origin main
+                        git push branch: 'main', credentialsId: 'Github_server', url: 'https://github.com/betawins/Hiring-app-argocd.git'
                         '''                        
                       }
                   }
